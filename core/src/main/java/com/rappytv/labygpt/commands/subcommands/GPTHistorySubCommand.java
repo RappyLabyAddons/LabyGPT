@@ -23,14 +23,15 @@ public class GPTHistorySubCommand extends SubCommand {
         Component component = Component.empty();
         for(int i = 0; i < GPTAddon.queryHistory.size(); i++) {
             GPTMessage message = GPTAddon.queryHistory.get(i);
+            if(message.role == GPTRole.System) continue;
             String name = message.name.isEmpty() ? labyAPI.getName() : message.name;
-            if(message.role != GPTRole.System)
-                component
-                    .append(Component.text(i == 0 ? "" : "\n"))
-                    .append(Component.text("[", NamedTextColor.DARK_GRAY))
-                    .append(Component.text(name))
-                    .append(Component.text("] ", NamedTextColor.DARK_GRAY))
-                    .append(Component.text(message.content.replace("\n\n", ""), NamedTextColor.WHITE));
+
+            component
+                .append(Component.text(i == 1 ? "" : "\n"))
+                .append(Component.text("[", NamedTextColor.DARK_GRAY))
+                .append(Component.text(name, message.role == GPTRole.Assistant ? NamedTextColor.BLUE : NamedTextColor.RED))
+                .append(Component.text("] ", NamedTextColor.DARK_GRAY))
+                .append(Component.text(message.content.replace("\n\n", ""), NamedTextColor.WHITE));
         }
 
         displayMessage(component);
