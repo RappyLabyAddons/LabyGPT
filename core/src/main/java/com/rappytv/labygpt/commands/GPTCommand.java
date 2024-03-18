@@ -42,7 +42,7 @@ public class GPTCommand extends Command {
         request.sendRequestAsync(
             String.join(" ", arguments),
             addon.configuration().openAI().bearer(),
-            addon.configuration().openAI().shareUsername() ? labyAPI.getName() : "",
+            addon.configuration().openAI().shareUsername() ? labyAPI.getName() : "Player",
             addon.configuration().gpt().model().get().toLowerCase(),
             addon.configuration().gpt().behavior().get()
         ).thenRun(() -> {
