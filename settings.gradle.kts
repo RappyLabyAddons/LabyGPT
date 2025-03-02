@@ -1,7 +1,7 @@
 rootProject.name = "labygpt"
 
 pluginManagement {
-    val labyGradlePluginVersion = "0.5.3"
+    val labyGradlePluginVersion = "0.5.8"
 
     buildscript {
         repositories {

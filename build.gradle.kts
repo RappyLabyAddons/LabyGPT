@@ -9,7 +9,7 @@ group = "org.example"
 version = providers.environmentVariable("VERSION").getOrElse("1.1.4")
 
 labyMod {
-    defaultPackageName = "com.rappytv.labygpt.core"
+    defaultPackageName = "com.rappytv.labygpt"
     addonInfo {
         namespace = "labygpt"
         displayName = "LabyGPT"
