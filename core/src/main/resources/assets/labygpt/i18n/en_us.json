@@ -24,6 +24,10 @@
                     "name": "Model",
                     "description": "Which OpenAI model you want to use."
                 },
+                "overrideModel": {
+                    "name": "Override Model",
+                    "description": "If you can't find your desired model in the dropdown menu you can enter a custom model here. Please leave this empty if you don't know what this is."
+                },
                 "behavior": {
                     "name": "Behavior Instruction",
                     "description": "The chatbot will behave as you specify here."
@@ -34,14 +38,19 @@
                 "description": "If turned off every Query will be it's own conversation and won't be related to the previous chat history. You can also view your conversation history with §b/gpt history §fand clear it with §b/gpt clear§f!"
             }
         },
-        "messages": {
-            "noKey": "You have to provide a valid OpenAI API Key!",
-            "noQuery": "You have to enter the text to send to ChatGPT!",
-            "alreadyEmptyHistory": "The conversation history is already empty!",
-            "emptyHistory": "The conversation history is empty!",
-            "requestError": "An error ocurred with the request to OpenAI!",
-            "invalidBearer": "You didn't provide an API key. You can obtain an API key from §bhttps://platform.openai.com/account/api-keys§c.",
-            "historyCleared": "The conversation history was successfully cleared!"
+        "commands": {
+            "gpt": {
+                "noKey": "You have to provide a valid OpenAI API Key!",
+                "noQuery": "You have to enter the text to send to the AI model!",
+                "requestError": "An error ocurred with the request to OpenAI!"
+            },
+            "clear": {
+                "alreadyEmpty": "The conversation history is already empty!",
+                "success": "The conversation history was successfully cleared!"
+            },
+            "history": {
+                "empty": "The conversation history is empty!"
+            }
         }
     }
 }
