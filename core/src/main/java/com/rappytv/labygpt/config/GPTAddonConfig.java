@@ -1,4 +1,4 @@
-package com.rappytv.labygpt.core.config;
+package com.rappytv.labygpt.config;
 
 import net.labymod.api.addon.AddonConfig;
 import net.labymod.api.client.gui.screen.widget.widgets.input.SwitchWidget.SwitchSetting;
@@ -11,11 +11,11 @@ import net.labymod.api.configuration.loader.property.ConfigProperty;
 @SpriteTexture("settings")
 public class GPTAddonConfig extends AddonConfig {
 
-    @SwitchSetting
     @SpriteSlot(size = 32)
-    private final ConfigProperty<Boolean> enabled = new ConfigProperty<>(true);
     @SwitchSetting
+    private final ConfigProperty<Boolean> enabled = new ConfigProperty<>(true);
     @SpriteSlot(size = 32, x = 2, y = 1)
+    @SwitchSetting
     private final ConfigProperty<Boolean> saveHistory = new ConfigProperty<>(true);
     @SpriteSlot(size = 32, x = 1)
     private final OpenAISubConfig openAI = new OpenAISubConfig();
@@ -24,15 +24,15 @@ public class GPTAddonConfig extends AddonConfig {
 
     @Override
     public ConfigProperty<Boolean> enabled() {
-        return enabled;
+        return this.enabled;
     }
     public OpenAISubConfig openAI() {
-        return openAI;
+        return this.openAI;
     }
     public GPTSubConfig gpt() {
-        return gpt;
+        return this.gpt;
     }
     public Boolean saveHistory() {
-        return saveHistory.get();
+        return this.saveHistory.get();
     }
 }
