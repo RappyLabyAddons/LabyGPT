@@ -2,23 +2,23 @@ package com.rappytv.labygpt.api;
 
 import com.google.gson.annotations.SerializedName;
 
-public class GPTMessage {
+public class ChatMessage {
     public String content;
-    public GPTRole role;
+    public ChatRole role;
     public String name;
 
-    public GPTMessage(String content, GPTRole role, String name) {
+    public ChatMessage(String content, ChatRole role, String name) {
         this.content = content;
         this.role = role;
         this.name = name;
     }
 
-    public enum GPTRole {
-        @SerializedName("system")
-        System,
+    public enum ChatRole {
+        @SerializedName("developer")
+        DEVELOPER,
         @SerializedName("user")
-        User,
+        USER,
         @SerializedName("assistant")
-        Assistant
+        ASSISTANT
     }
 }

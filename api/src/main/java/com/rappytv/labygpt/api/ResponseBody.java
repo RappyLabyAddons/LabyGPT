@@ -8,10 +8,9 @@ public class ResponseBody {
     public Error error;
 
     public static class Choice {
-        public GPTMessage message;
+        public ChatMessage message;
     }
     public static class Error {
         public String message;
-        public String code;
     }
 }
